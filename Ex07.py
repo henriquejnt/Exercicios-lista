@@ -15,8 +15,10 @@ while True:
             else:
                 votos[n] = 1
 print('JOGADOR')
+print(len(votos))
 for num in camisas:
     print(f"Camisa {num}")
 print(votos)
-for valor, vt in votos.items():
-    print(f'Camisa {valor}: votos {vt}')
+for valor, vt in sorted(votos.items()):
+    porcentagem = (valor/sum(votos))*100
+    print(f'Camisa {valor}: votos {vt}         {porcentagem:.2f}%')
